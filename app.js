@@ -75,49 +75,55 @@ circles.forEach(circle => {
 
 // skill animation end
 
+
 // contact start
 const form = document.querySelector("form");
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+if (form) {
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    const formData = new FormData(form);
+        const formData = new FormData(form);
 
-    formData.append("form-name", "contact");
+        formData.append("form-name", "contact");
 
-    await fetch("/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(formData).toString(),
+        await fetch("/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams(formData).toString(),
+        });
+
+        alert("Message Sent Successfully!");
+        form.reset();
     });
-
-    alert("Message Sent Successfully!");
-    form.reset();
-});
-
+}
 // contact end
-
 // navbar responsive start
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".nav-link");
 const menuIcon = document.querySelector(".menu-toggle span");
 
-menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
+if (menuToggle && mobileMenu && menuIcon) {
 
-    if (mobileMenu.classList.contains("active")) {
-        menuIcon.innerHTML = "✕";
-    } else {
-        menuIcon.innerHTML = "☰";
-    }
-});
+    menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
 
-document.querySelectorAll(".nav-link a").forEach(link => {
-    link.addEventListener("click", () => {
-        mobileMenu.classList.remove("active");
-        menuIcon.innerHTML = "☰";
+        if (mobileMenu.classList.contains("active")) {
+            menuIcon.innerHTML = "✕";
+        } else {
+            menuIcon.innerHTML = "☰";
+        }
     });
-});
+
+    document.querySelectorAll(".nav-link a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            menuIcon.innerHTML = "☰";
+        });
+    });
+
+}
 // navbar responsive end
+

@@ -179,7 +179,7 @@ body {
 }
 
 .hero-content {
-    width: 550px;
+    max-width: 550px;
     padding-left: 30px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -1017,6 +1017,9 @@ form button:hover {
     .hero-content {
         padding-top: 0;
     }
+    .hero-content{
+        width: 90%;
+    }
 }
 
 /* Small Mobile */
@@ -1078,11 +1081,11 @@ form button:hover {
     }
 
     .project-btn {
-        width: 62%;
+        width: 100%;
     }
 
     .resume-btn {
-        width: 62%;
+        width: 100%;
     }
 
     .about {
