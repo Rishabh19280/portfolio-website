@@ -1,8 +1,6 @@
-const filterBtns =
-document.querySelectorAll(".filter-btn");
+const filterBtns = document.querySelectorAll(".filter-btn");
 
-const cards =
-document.querySelectorAll(".project-card");
+const cards = document.querySelectorAll(".project-card");
 
 filterBtns.forEach(btn=>{
 
@@ -14,14 +12,12 @@ filterBtns.forEach(btn=>{
 
         btn.classList.add("active");
 
-        const filter =
-        btn.dataset.filter;
+        const filter = btn.dataset.filter;
 
         cards.forEach(card=>{
 
             if(
-                filter === "all" ||
-                card.dataset.category === filter
+                filter === "all" ||card.dataset.category === filter
             ){
                 card.style.display = "block";
             }
